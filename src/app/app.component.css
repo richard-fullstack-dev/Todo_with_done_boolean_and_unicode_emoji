@@ -1,0 +1,21 @@
+.tartalom{
+    text-align: center;
+    margin: 0 auto;
+    border: 2px solid green;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    margin-top: 40px;
+}
+
+.todocss{
+    text-decoration: underline;
+}
+.greenstyle{
+    background-color: rgb(187, 218, 187);
+    color: green;
+}
+
+
+
+

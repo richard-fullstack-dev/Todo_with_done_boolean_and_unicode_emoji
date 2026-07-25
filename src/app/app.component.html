@@ -1,0 +1,16 @@
+
+
+
+<div class="tartalom">
+  <h1 class="todocss">Todo-app</h1>
+  <br>
+  <input class="form-control mb-2" type="text" [(ngModel)]="newToDo.name">
+<button type="button" class="btn btn-sm btn-success" (click)="add()">Success</button>  
+<br>
+<div class="alert alert-light" *ngFor="let item of todos" (click)="markTodoAsDone(item)"
+  [ngClass]="markDonecss(item)"> 
+  <span *ngIf="item.done">👌</span> {{item.date}}  -  {{item.name}} 
+</div>
+
+
+
