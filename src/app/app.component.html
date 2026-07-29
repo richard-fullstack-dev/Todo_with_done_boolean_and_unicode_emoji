@@ -1,16 +1,27 @@
-
-
-
 <div class="tartalom">
   <h1 class="todocss">Todo-app</h1>
   <br>
-  <input class="form-control mb-2" type="text" [(ngModel)]="newToDo.name">
-<button type="button" class="btn btn-sm btn-success" (click)="add()">Success</button>  
-<br>
-<div class="alert alert-light" *ngFor="let item of todos" (click)="markTodoAsDone(item)"
-  [ngClass]="markDonecss(item)"> 
-  <span *ngIf="item.done">👌</span> {{item.date}}  -  {{item.name}} 
+  <input class="form-control mb-2" type="text" [(ngModel)]="newToDo.name" autofocus>
+  <button type="button" class="btn btn-sm btn-success" (click)="add()">Success</button>
+  <br>
+  <div>
+    Total: <span class="badge text-bg-primary">{{todos.length}}</span>
+    Finished: <span class="badge text-bg-success">{{finishedTodo()}}</span>
+    Missing: <span class="badge text-bg-danger">{{todos.length - finishedTodo()}}</span>
+  </div>
+  <div>
+
+    <div class="alert" *ngFor="let todo of todos" (click)="markedTodo(todo)"
+      [ngClass]="{
+        'border-prio': todo.prio,
+        'alert' : true,
+        'alert-success' : todo.doneTodo,
+        'alert-secondary' : !todo.doneTodo,
+      }"  
+    >
+      <span *ngIf="todo.doneTodo">✅</span> {{formatDate(todo.date)}}
+      {{todo.name}}
+    </div>
+  </div> 
+
 </div>
-
-
-

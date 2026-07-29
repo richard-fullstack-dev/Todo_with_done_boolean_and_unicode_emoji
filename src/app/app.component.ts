@@ -10,20 +10,26 @@ export class AppComponent {
     newToDo: ToDo = new ToDo()
     todos: ToDo[] = []
 
-    markDonecss(todo: ToDo){
-      return todo.done ? "greenstyle" : ""
-    }
-
-    markTodoAsDone(todo: ToDo): void{
-        todo.done = true
-    }
 
     formatDate(date: Date){
       return date.getHours() + ":" + date.getMinutes()
     }
 
     add(){
-      this.todos.push({...this.newToDo})
+     
+      if(this.newToDo.name.startsWith ("!"))
+        this.newToDo.prio = true
+        
+      
+       this.todos.push({...this.newToDo})
+      this.newToDo.name = ""
+    }
+
+    markedTodo(todo: ToDo){
+      todo.doneTodo = !todo.doneTodo
+    }
+    finishedTodo(){
+      return this.todos.filter(x => x.doneTodo).length
     }
 }
  

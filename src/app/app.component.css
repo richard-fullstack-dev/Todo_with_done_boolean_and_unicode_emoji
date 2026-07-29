@@ -4,18 +4,16 @@
     border: 2px solid green;
     border-radius: 20px;
     padding: 30px;
-    max-width: 400px;
     margin-top: 40px;
 }
 
 .todocss{
     text-decoration: underline;
 }
-.greenstyle{
-    background-color: rgb(187, 218, 187);
+.greenMarked{
+    background-color: rgb(186, 216, 186);
     color: green;
 }
-
-
-
-
+.border-prio{
+    border-left: 4px solid red;
+}
