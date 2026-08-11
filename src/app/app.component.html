@@ -1,13 +1,13 @@
 <div class="tartalom">
   <h1 class="todocss">Todo-app</h1>
   <br>
-  <input class="form-control mb-2" type="text" [(ngModel)]="newToDo.name" autofocus>
-  <button type="button" class="btn btn-sm btn-success" (click)="add()">Success</button>
+  <input class="form-control mb-3" type="text" placeholder="Írd ide a feladatot... majd hozzáadás után kattint a szürke feladatra hogy kipipáld" [(ngModel)]="newToDo.name" autofocus>
+  <button type="button" class="btn btn-success mb-4" (click)="add()">Hozzáad</button>
   <br>
   <div>
     Total: <span class="badge text-bg-primary">{{todos.length}}</span>
     Finished: <span class="badge text-bg-success">{{finishedTodo()}}</span>
-    Missing: <span class="badge text-bg-danger">{{todos.length - finishedTodo()}}</span>
+    Missing: <span class="badge text-bg-danger mb-4">{{todos.length - finishedTodo()}}</span>
   </div>
   <div>
 
@@ -22,6 +22,6 @@
       <span *ngIf="todo.doneTodo">✅</span> {{formatDate(todo.date)}}
       {{todo.name}}
     </div>
-  </div> 
+  </div>  
 
 </div>
